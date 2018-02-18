@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace PuntoVenta\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
