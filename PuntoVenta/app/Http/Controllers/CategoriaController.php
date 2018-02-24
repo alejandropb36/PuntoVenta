@@ -22,14 +22,15 @@ class CategoriaController extends Controller
     		$query=trim($request->get('searchText'));
     		$categorias=DB::table('categoria')->where('nombre','LIKE','%'.$query.'%')
     		->where('condicion','=','1')
-    		->orderBy('idcategoria','desc')
-    		->pagination(7);
+    		->orderBy('idcategoria','desc');
+            //Atencion aqui esto es de un problema de paginacion aun no se como resolverlo
+    		//->pagination(7);
     		return view('almacen.categoria.index',["categorias"=>$categorias,"searchText"=>$query]);
      	}
     }
     public function create()
     {
-    	return view("almacen.categoria.create")
+    	return view("almacen.categoria.create");
     }
     public function store(CategoriaFromRequest $request)
     {
