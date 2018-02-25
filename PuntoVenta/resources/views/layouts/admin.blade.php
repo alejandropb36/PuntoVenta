@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ADVentas | www.incanatoit.com</title>
+    <title>PuntoVenta AP | www.github.com/Thehunter46</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -29,7 +29,7 @@
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>AD</b>V</span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>ADVentas</b></span>
+          <span class="logo-lg"><b>PuntoVenta</b></span>
         </a>
 
         <!-- Header Navbar: style can be found in header.less -->
@@ -162,7 +162,7 @@
             <div class="col-md-12">
               <div class="box">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Sistema de Ventas</h3>
+                  <h3 class="box-title">Punto de Venta</h3>
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     
@@ -174,7 +174,7 @@
                   	<div class="row">
 	                  	<div class="col-md-12">
 		                          <!--Contenido-->
-                              @yield('contenido');
+                              @yield('contenido')
 		                          <!--Fin Contenido-->
                            </div>
                         </div>
@@ -191,9 +191,10 @@
       <!--Fin-Contenido-->
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
-          <b>Version</b> 2.3.0
+          <b>Version</b> 2.3.0 
+          <a href="https://adminlte.io/themes/AdminLTE/index2.html#"> AdminLTE</a>
         </div>
-        <strong>Copyright &copy; 2015-2020 <a href="www.incanatoit.com">IncanatoIT</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2018-2023 <a href="www.github.com/Thehunter46">Thehunter46</a>.</strong> All rights reserved.
       </footer>
 
       
