@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Categoria extends Model
 {
-    protectec $table = 'categoria';
+    protected $table='categoria';
 
-    protectec $primaryKey = 'idcategoria';
+    protected $primaryKey='idcategoria';
 
     public $timestamps = false;
 
-    protectec $fillabel = [
+    protected $fillabel = [
     	'nombre',
     	'descripcion',
     	'condicion'

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use PuntoVenta\Categoria;
 use Illuminate\Support\Facades\Redirect;
-use PuntoVenta\Http\Request\CategoriaFromRequest;
+use PuntoVenta\Http\Requests\CategoriaFormRequest;
 use DB;
 
 class CategoriaController extends Controller
@@ -31,12 +31,12 @@ class CategoriaController extends Controller
     {
     	return view("almacen.categoria.create");
     }
-    public function store(CategoriaFromRequest $request)
+    public function store(CategoriaFormRequest $request)
     {
     	$categoria=new Categoria;
-    	$categoria->$nombre=$request->get('nombre');
-    	$categoria->$descripcion=$request->get('descripcion');
-    	$categoria->$condicion='1';
+    	$categoria->nombre=$request->get('nombre');
+    	$categoria->descripcion=$request->get('descripcion');
+    	$categoria->condicion='1';
     	$categoria->save();
     	return Redirect::to('almacen/categoria');
     }
@@ -48,7 +48,7 @@ class CategoriaController extends Controller
     {
     	return view("almacen.categoria.edit",["categoria"=>Categoria::findOrFail($id)]);
     }
-    public function update(CategoriaFromRequest $request,$id)
+    public function update(CategoriaFormRequest $request,$id)
     {
     	$categoria=Categoria::findOrFail($id);
     	$categoria->nombre=$request->get('nombre');
