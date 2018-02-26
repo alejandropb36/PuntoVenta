@@ -62,6 +62,6 @@ class CategoriaController extends Controller
     	$categoria=Categoria::findOrFail($id);
     	$categoria->condicion='0';
     	$categoria->update();
-    	return Redirect::to('alamcen/categoria');
+    	return Redirect::to('almacen/categoria');
     }
 }
