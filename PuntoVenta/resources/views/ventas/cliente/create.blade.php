@@ -14,7 +14,7 @@
 			@endif
 		</div>
 	</div>
-			{!!Form::open(array('url'=>'ventas/cliente','method'=>'POST','autocomplete'=>'off','files'=>'true'))!!}
+			{!!Form::open(array('url'=>'ventas/cliente','method'=>'POST','autocomplete'=>'off'))!!}
 			{{Form::token()}}
 				<div class="row">
 					<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
@@ -25,36 +25,37 @@
 					</div>
 					<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 						<div class="form-group">
-							<label>Categoria</label>
-							<select name="idcategoria" class="form-control">
-								@foreach ($categorias as $cat)
-									<option value="{{$cat->idcategoria}}">{{$cat->nombre}}</option>
-								@endforeach
+							<label for="nombre">Direccion</label>
+							<input type="text" name="direccion" values="{{old('direccion')}}" class="form-control" placeholder="Direccion...">
+						</div>
+					</div>
+					<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+						<div class="form-group">
+							<label>Tipo de Doc.</label>
+							<select name="tipo_documento" class="form-control">
+								<option value="DNI">DNI</option>
+								<option value="RFC">RFC</option>
+								<option value="PAS">PAS</option>
 							</select>
 						</div>
 					</div>
 					<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 						<div class="form-group">
-							<label for="codigo">Codigo</label>
-							<input type="text" name="codigo" required values="{{old('codigo')}}" class="form-control" placeholder="Codigo...">
+							<label for="codigo">Numero de Doc.</label>
+							<input type="text" name="num_documento" values="{{old('num_documento')}}" class="form-control" placeholder="Numero de documento...">
 						</div>
 					</div>
 					<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 						<div class="form-group">
-							<label for="stock">Stock</label>
-							<input type="text" name="stock" required values="{{old('stock')}}" class="form-control" placeholder="Stock del articulo...">
+							<label for="stock">Telefono</label>
+							<input type="text" name="telefono" values="{{old('telefono')}}" class="form-control" placeholder="Telefono...">
 						</div>
 					</div>
 					<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 						<div class="form-group">
-							<label for="descripcion">Descripcion</label>
-							<input type="text" name="descripcion" values="{{old('descripcion')}}" class="form-control" placeholder="Descripcion del articulo...">
+							<label for="descripcion">Email</label>
+							<input type="email" name="email" values="{{old('email')}}" class="form-control" placeholder="Email...">
 						</div>
-					</div>
-					<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-						<div class="form-group">
-							<label for="imagen">Imagen</label>
-							<input type="file" name="imagen" class="form-control" >
 					</div>
 
 					<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
