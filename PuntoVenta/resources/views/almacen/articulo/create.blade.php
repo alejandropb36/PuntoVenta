@@ -20,7 +20,7 @@
 					<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 						<div class="form-group">
 							<label for="nombre">Nombre</label>
-							<input type="text" name="nombre" required values="{{old('nombre')}}" class="form-control" placeholder="Nombre...">
+							<input type="text" name="nombre" required value="{{old('nombre')}}" class="form-control" placeholder="Nombre...">
 						</div>
 					</div>
 					<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
@@ -36,19 +36,19 @@
 					<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 						<div class="form-group">
 							<label for="codigo">Codigo</label>
-							<input type="text" name="codigo" required values="{{old('codigo')}}" class="form-control" placeholder="Codigo...">
+							<input type="text" name="codigo" required value="{{old('codigo')}}" class="form-control" placeholder="Codigo...">
 						</div>
 					</div>
 					<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 						<div class="form-group">
 							<label for="stock">Stock</label>
-							<input type="text" name="stock" required values="{{old('stock')}}" class="form-control" placeholder="Stock del articulo...">
+							<input type="text" name="stock" required value="{{old('stock')}}" class="form-control" placeholder="Stock del articulo...">
 						</div>
 					</div>
 					<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 						<div class="form-group">
 							<label for="descripcion">Descripcion</label>
-							<input type="text" name="descripcion" values="{{old('descripcion')}}" class="form-control" placeholder="Descripcion del articulo...">
+							<input type="text" name="descripcion" value="{{old('descripcion')}}" class="form-control" placeholder="Descripcion del articulo...">
 						</div>
 					</div>
 					<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">

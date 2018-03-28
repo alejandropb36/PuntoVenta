@@ -22,13 +22,13 @@
 					<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 						<div class="form-group">
 							<label for="nombre">Nombre</label>
-							<input type="text" name="nombre" required values="{{$persona->nombre}}" class="form-control">
+							<input type="text" name="nombre" required value="{{$persona->nombre}}" class="form-control">
 						</div>
 					</div>
 					<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 						<div class="form-group">
 							<label for="nombre">Direccion</label>
-							<input type="text" name="direccion" values="{{$persona->direccion}}" class="form-control" placeholder="Direccion...">
+							<input type="text" name="direccion" value="{{$persona->direccion}}" class="form-control" placeholder="Direccion...">
 						</div>
 					</div>
 					<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
@@ -54,19 +54,19 @@
 					<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 						<div class="form-group">
 							<label for="codigo">Numero de Doc.</label>
-							<input type="text" name="num_documento" values="{{$persona->num_documento}}" class="form-control" placeholder="Numero de documento...">
+							<input type="text" name="num_documento" value="{{$persona->num_documento}}" class="form-control" placeholder="Numero de documento...">
 						</div>
 					</div>
 					<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 						<div class="form-group">
 							<label for="stock">Telefono</label>
-							<input type="text" name="telefono" values="{$pesrona->telefono}" class="form-control" placeholder="Telefono...">
+							<input type="text" name="telefono" value="{{$persona->telefono}}" class="form-control" placeholder="Telefono...">
 						</div>
 					</div>
 					<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 						<div class="form-group">
 							<label for="descripcion">Email</label>
-							<input type="email" name="email" values="{{$persona->email}}" class="form-control" placeholder="Email...">
+							<input type="email" name="email" value="{{$persona->email}}" class="form-control" placeholder="Email...">
 						</div>
 					</div>
 
