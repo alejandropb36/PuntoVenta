@@ -28,11 +28,7 @@
 							<label>Categoria</label>
 							<select name="idcategoria" class="form-control">
 								@foreach ($categorias as $cat)
-									@if($cate->idcategoria == $articulo->idcategoria)
-										<option value="{{$cat->idcateoria}}" selected>{{$cat->nombre}}</option>
-									@else
-										<option value="{{$cat->idcateoria}}">{{$cat->nombre}}</option>
-									@endif
+									<option value="{{$cat->idcategoria}}">{{$cat->nombre}}</option>
 								@endforeach
 							</select>
 						</div>
@@ -40,30 +36,27 @@
 					<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 						<div class="form-group">
 							<label for="codigo">Codigo</label>
-							<input type="text" name="codigo" required values="{{$articulo->codigo}}" class="form-control">
+							<input type="text" name="codigo" required values="{{old('codigo')}}" class="form-control" placeholder="Codigo...">
 						</div>
 					</div>
 					<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 						<div class="form-group">
 							<label for="stock">Stock</label>
-							<input type="text" name="stock" required values="{{$articulo->stock}}" class="form-control" >
+							<input type="text" name="stock" required values="{{old('stock')}}" class="form-control" placeholder="Stock del articulo...">
 						</div>
 					</div>
 					<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 						<div class="form-group">
 							<label for="descripcion">Descripcion</label>
-							<input type="text" name="descripcion" required values="{{$articulo->descripcion}}" class="form-control" placeholder="Descripcion del articulo...">
+							<input type="text" name="descripcion" values="{{old('descripcion')}}" class="form-control" placeholder="Descripcion del articulo...">
 						</div>
 					</div>
 					<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 						<div class="form-group">
 							<label for="imagen">Imagen</label>
-							<input type="file" name="imagen" required  class="form-control" >
-							@if (($articulo->imagen) != "")
-								<img src="{{asset('imagenes/articulo'.$articulo->imagen)}}" height="300px" widht="300px" >
-							@endif
-						</div>
+							<input type="file" name="imagen" class="form-control" >
 					</div>
+
 					<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 						<div class="form-group">
 							<button class="btn btn-primary" type="submit">Guardar</button>
