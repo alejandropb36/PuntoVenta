@@ -34,14 +34,14 @@ class IngresoController extends Controller
                 ->where('i.num_comprobante','LIKE','%'.$query.'%')
                 ->orderBY('i.idingreso','desc')
                 ->groupBy('i.idingreso','i.fecha_hora','p.nombre','i.tipo_comprobante','i.serie_comprobante','i.num_comprobante','i.impuesto','i.estado')
-                ->paginate(6);
+                ->paginate(7);
                 return view('compras.ingreso.index',["ingresos" => $ingresos, "searchText" => $query]);
      	}
     }
     public function create()
     {
-        $personas = DB::table('persona')->where('tipo_persona', '=', 'Proveedor')->get();
-        $articulos = DB::table('articulos as art')
+        $personas = DB::table('persona')->where('tipo_persona', '=', 'proveedor')->get();
+        $articulos = DB::table('articulo as art')
             ->select(DB::raw('CONCAT(art.codigo, " ", art.nombre) AS articulo'), 'art.idarticulo')
             ->where('art.estado','=','Activo')
             ->get();
@@ -95,6 +95,7 @@ class IngresoController extends Controller
             ->join('detalle_ingreso as di','i.idingreso','=','di.idingreso')
             ->select('i.idingreso','i.fecha_hora','p.nombre','i.tipo_comprobante','i.serie_comprobante','i.num_comprobante','i.impuesto','i.estado',DB::raw('sum(di.cantidad * precio_compra) as total'))
             ->where('i.idingreso','=',$id)
+            ->groupBy('i.idingreso','i.fecha_hora','p.nombre','i.tipo_comprobante','i.serie_comprobante','i.num_comprobante','i.impuesto','i.estado')
             ->first();
 
         $detalles = DB::table('detalle_ingreso as d')
