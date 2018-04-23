@@ -52,7 +52,7 @@ class VentaController extends Controller
             ->where('art.stock','>','0')
             ->orderBy('di.precio_venta','desc')
             ->groupBy('articulo','art.idarticulo','art.stock')
-            ->take(1)
+            ->first()
             ->get();
         return view("ventas.venta.create",["personas"=>$personas,"articulos"=>$articulos]);
     }

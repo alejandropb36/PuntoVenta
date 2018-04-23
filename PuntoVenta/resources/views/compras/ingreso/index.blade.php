@@ -15,9 +15,7 @@
 						<!--<th>Id</th>-->
 						<th>Fecha</th>
 						<th>Proveedor</th>
-						<th>Tipo de comprobante</th>
-						<th>Serie de comprobante</th>
-						<th>Numero de comprobante</th>
+						<th>Comprobante</th>
 						<th>Impuesto</th>
 						<th>Total</th>
 						<th>Estado</th>
@@ -28,9 +26,7 @@
 						<!--<td>{{$ing->idingreso}}</td>-->
 						<td>{{$ing->fecha_hora}}</td>
 						<td>{{$ing->nombre}}</td>
-						<td>{{$ing->tipo_comprobante}}</td>
-						<td>{{$ing->serie_comprobante}}</td>
-						<td>{{$ing->num_comprobante}}</td>
+						<td>{{$ing->tipo_comprobante.': '.$ing->serie_comprobante.'-'.$ing->num_comprobante}}</td>
 						<td>{{$ing->impuesto}}</td>
 						<td>{{$ing->total}}</td>
 						<td>{{$ing->estado}}</td>
