@@ -138,7 +138,7 @@
 			total = 0;
 			var cont = 0;
 			subtotal = [];
-			$("guardar").hide();
+			$("#guardar").hide();
 
 			function agregar()
 			{
