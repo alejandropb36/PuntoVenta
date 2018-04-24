@@ -47,7 +47,11 @@ class VentaController extends Controller
      $personas=DB::table('persona')->where('tipo_persona','=','Cliente')->get();
      $articulos = DB::table('articulo as art')
             ->join('detalle_ingreso as di','art.idarticulo','=','di.idarticulo')
+<<<<<<< HEAD
             ->select(DB::raw('CONCAT(art.codigo, " ",art.nombre) AS articulo'),'art.idarticulo','art.stock',DB::raw('avg(di.precio_venta) as precio_promedio'))
+=======
+            ->select(DB::raw('CONCAT(art.codigo, " ",art.nombre) AS articulo'),'art.idarticulo','art.stock',DB::raw('avg(di.precio_venta) as precio_final'))
+>>>>>>> 7341dd53efe53b8f1260ca27047fd82680651f1d
             ->where('art.estado','=','Activo')
             ->where('art.stock','>','0')
             ->groupBy('articulo','art.idarticulo','art.stock')
