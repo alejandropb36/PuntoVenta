@@ -58,11 +58,7 @@
 								<label for="">Articulo</label>
 								<select name="pidarticulo" id="pidarticulo" class="form-control selectpicker" data-live-search="true">
 									@foreach($articulos as $articulo)
-<<<<<<< HEAD
 										<option value="{{$articulo->idarticulo}}_{{$articulo->stock}}_{{$articulo->precio_promedio}}">{{$articulo->articulo}}</option>
-=======
-										<option value="{{$articulo->idarticulo}}_{{$articulo->stock}}_{{$articulo->precio_final}}">{{$articulo->articulo}}</option>
->>>>>>> 7341dd53efe53b8f1260ca27047fd82680651f1d
 									@endforeach
 								</select>
 							</div>
