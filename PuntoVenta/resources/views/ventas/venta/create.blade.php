@@ -57,7 +57,7 @@
 								<label for="">Articulo</label>
 								<select name="pidarticulo" id="pidarticulo" class="form-control selectpicker" data-live-search="true">
 									@foreach($articulos as $articulo)
-										<option value="{{$articulo->idarticulo}}_{{$articulo->stock}}_{{$articulo->precio_venta}}">{{$articulo->articulo}}</option>
+										<option value="{{$articulo->idarticulo}}_{{$articulo->stock}}_{{$articulo->precio_final}}">{{$articulo->articulo}}</option>
 									@endforeach
 								</select>
 							</div>
@@ -71,13 +71,13 @@
 						<div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
 							<div class="form-group">
 								<label for="stock">Stock</label>
-								<input type="number" disabled name="pstock" id="pstock" class="form-control" placeholder="Stock"> 
+								<input type="number"  name="pstock" id="pstock" disabled class="form-control" placeholder="Stock"> 
 							</div>
 						</div>
 						<div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
 							<div class="form-group">
 								<label for="precio_venta">Precio venta</label>
-								<input type="number" disabled name="pprecio_venta" id="pprecio_venta" class="form-control" placeholder="P. Venta"> 
+								<input type="number"  name="pprecio_venta" id="pprecio_venta" disabled class="form-control" placeholder="P. Venta"> 
 							</div>
 						</div>
 						
@@ -145,8 +145,8 @@
 			total = 0;
 			var cont = 0;
 			subtotal = [];
-			$("guardar").hide();
-			$("pidarticulo").change(mostrarValores);
+			$("#guardar").hide();
+			$("#pidarticulo").change(mostrarValores);
 
 			function mostrarValores()
 			{
@@ -170,13 +170,14 @@
 				{
 					if(stock >= cantidad)
 					{
-						subtotal[cont] = (cantidad * precio_compra);
+						subtotal[cont] = (cantidad * precio_venta - descuento);
 						total = total + subtotal[cont];
 
-						var fila = '<tr class="selected" id ="fila' + cont + '"><td><button type="button" class="btn btn-warning" onclick="eliminar('+ cont +');">X</button></td> <td><input type="hidden" name="idarticulo[]" value="'+ idarticulo +'">'+ articulo +'</td> <td><input type="number" name="cantidad[]" value="'+ cantidad +'"></td> <td><input type="number" name="precio_compra[]" value="'+ precio_compra +'"></td> <td><input type="number" name="precio_venta[]" value="'+ precio_venta +'"></td> <td>'+ subtotal[cont] +'</td></tr>';
+						var fila = '<tr class="selected" id ="fila' + cont + '"><td><button type="button" class="btn btn-warning" onclick="eliminar('+ cont +');">X</button></td> <td><input type="hidden" name="idarticulo[]" value="'+ idarticulo +'">'+ articulo +'</td> <td><input type="number" name="cantidad[]" value="'+ cantidad +'"></td> <td><input type="number" name="precio_venta[]" value="'+ preci0_venta +'"></td> <td><input type="number" name="descuento[]" value="'+ descuento +'"></td> <td>'+ subtotal[cont] +'</td></tr>';
 						cont++;
 						limpiar();
 						$("#total").html("S/. " + total);
+						$("#total_venta").val(total);
 						evaluar();
 						$('#detalles').append(fila);
 					}
@@ -188,7 +189,7 @@
 				}
 				else
 				{
-					alert("Error al ingresar el detalle del ingreso, revise los datos del articulo");
+					alert("Error al ingresar el detalle de la venta, revise los datos del articulo");
 				}
 				
 			}
@@ -196,7 +197,7 @@
 			function limpiar()
 			{
 				$("#pcantidad").val("");
-				$("#pprecio_compra").val("");
+				$("#pdescuento").val("");
 				$("#pprecio_venta").val("");
 			}
 			
@@ -216,6 +217,7 @@
 			{
 				total = total - subtotal[index];
 				$("#total").html("S/. " + total);
+				$("#total_venta").val(total);
 				$("#fila" + index).remove();
 				evaluar();
 			}
