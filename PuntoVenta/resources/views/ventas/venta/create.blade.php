@@ -58,7 +58,7 @@
 								<label for="">Articulo</label>
 								<select name="pidarticulo" id="pidarticulo" class="form-control selectpicker" data-live-search="true">
 									@foreach($articulos as $articulo)
-										<option value="{{$articulo->idarticulo}}_{{$articulo->stock}}_{{$articulo->precio_promedio}}">{{$articulo->articulo}}</option>
+										<option value="{{$articulo->idarticulo}}_{{$articulo->stock}}_{{$articulo->precio_vt}}">{{$articulo->articulo}}</option>
 									@endforeach
 								</select>
 							</div>
@@ -173,7 +173,7 @@
 						subtotal[cont] = (cantidad * precio_venta - descuento);
 						total = total + subtotal[cont];
 
-						var fila = '<tr class="selected" id ="fila' + cont + '"><td><button type="button" class="btn btn-warning" onclick="eliminar('+ cont +');">X</button></td> <td><input type="hidden" name="idarticulo[]" value="'+ idarticulo +'">'+ articulo +'</td> <td><input type="number" name="cantidad[]" value="'+ cantidad +'"></td> <td><input type="number" name="precio_venta[]" value="'+ preci0_venta +'"></td> <td><input type="number" name="descuento[]" value="'+ descuento +'"></td> <td>'+ subtotal[cont] +'</td></tr>';
+						var fila = '<tr class="selected" id ="fila' + cont + '"><td><button type="button" class="btn btn-warning" onclick="eliminar('+ cont +');">X</button></td> <td><input type="hidden" name="idarticulo[]" value="'+ idarticulo +'">'+ articulo +'</td> <td><input type="number" name="cantidad[]" value="'+ cantidad +'"></td> <td><input type="number" name="precio_venta[]" value="'+ precio_venta +'"></td> <td><input type="number" name="descuento[]" value="'+ descuento +'"></td> <td>'+ subtotal[cont] +'</td></tr>';
 						cont++;
 						limpiar();
 						$("#total").html("S/. " + total);
@@ -196,6 +196,7 @@
 
 			function limpiar()
 			{
+				$("#pstock").val("");
 				$("#pcantidad").val("");
 				$("#pdescuento").val("");
 				$("#pprecio_venta").val("");
