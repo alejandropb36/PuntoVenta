@@ -12,7 +12,6 @@
 			<div class="table-responsive">
 				<table class="table table-striped table-bordered table-condensed table-hover">
 					<thead>
-						<!--<th>Id</th>-->
 						<th>Fecha</th>
 						<th>Cliente</th>
 						<th>Comprobante</th>
@@ -23,7 +22,6 @@
 					</thead>
 					@foreach($ventas as $ven)
 					<tr>
-						<!--<td>{{$ven->idventa}}</td>-->
 						<td>{{$ven->fecha_hora}}</td>
 						<td>{{$ven->nombre}}</td>
 						<td>{{$ven->tipo_comprobante.': '.$ven->serie_comprobante.'-'.$ven->num_comprobante}}</td>
