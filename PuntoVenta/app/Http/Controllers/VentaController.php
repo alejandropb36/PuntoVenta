@@ -57,7 +57,7 @@ class VentaController extends Controller
 
     public function store (VentaFormRequest $request)
     {
-     //try{
+     try{
          DB::beginTransaction();
          $venta=new Venta;
          $venta->idcliente=$request->get('idcliente');
@@ -66,7 +66,7 @@ class VentaController extends Controller
          $venta->num_comprobante=$request->get('num_comprobante');
          $venta->total_venta=$request->get('total_venta');
          
-         $mytime = Carbon::now('America/Lima');
+         $mytime = Carbon::now('America/Mexico_city');
          $venta->fecha_hora=$mytime->toDateTimeString();
          $venta->impuesto='18';
          $venta->estado='A';
@@ -92,10 +92,10 @@ class VentaController extends Controller
 
          DB::commit();
 
-       // }catch(\Exception $e)
-        //{
-          // DB::rollback();
-        //}
+        }catch(\Exception $e)
+        {
+          DB::rollback();
+        }
 
         return Redirect::to('ventas/venta');
     }
