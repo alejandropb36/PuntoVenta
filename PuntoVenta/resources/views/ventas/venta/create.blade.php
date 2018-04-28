@@ -58,7 +58,7 @@
 								<label for="">Articulo</label>
 								<select name="pidarticulo" id="pidarticulo" class="form-control selectpicker" data-live-search="true">
 									@foreach($articulos as $articulo)
-										<option value="{{$articulo->idarticulo}}_{{$articulo->stock}}_{{$articulo->precio_vt}}">{{$articulo->articulo}}</option>
+										<option value="{{$articulo->idarticulo}}_{{$articulo->stock}}_{{$articulo->precio_promedio}}">{{$articulo->articulo}}</option>
 									@endforeach
 								</select>
 							</div>
@@ -123,7 +123,7 @@
 					<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12" id="guardar">
 						<div class="form-group">
 
-							<input type="_token" value="{{csrf_token()}}" type="hidden">
+							<input type="_token" hidden value="{{csrf_token()}}" type="hidden">
 
 							<button class="btn btn-primary" type="submit">Guardar</button>
 							<button class="btn btn-danger" type="reset">Cancelar</button>
@@ -151,15 +151,15 @@
 
   			function mostrarValores()
   			{
-   				datosArticulos=document.getElementById('pidarticulo').value.split('_');
-   					$("#pprecio_venta").val(datosArticulos[2]);
-   					$("#pstock").val(datosArticulos[1]);
+   				datosArticulo=document.getElementById('pidarticulo').value.split('_');
+   					$("#pprecio_venta").val(datosArticulo[2]);
+   					$("#pstock").val(datosArticulo[1]);
   			}
 
 			function agregar()
 			{
-
-				idarticulo=$("#pidarticulo").val();
+                datosArticulo=document.getElementById('pidarticulo').value.split('_');
+                idarticulo = datosArticulo[0];
 				articulo = $("#pidarticulo option:selected").text();
 				cantidad = $("#pcantidad").val();
 				descuento = $("#pdescuento").val();
