@@ -147,7 +147,7 @@ CREATE TABLE IF NOT EXISTS `dbpuntoventa`.`detalle_venta` (
   `idarticulo` INT NOT NULL,
   `cantidad` INT NOT NULL,
   `precio_venta` DECIMAL(11,2) NOT NULL,
-  `descuento` DECIMAL(11,2) NOT NULL,
+  `decuento` DECIMAL(11,2) NOT NULL,
   PRIMARY KEY (`iddetalle_venta`),
   INDEX `fk_detalle_venta_articulo_idx` (`idarticulo` ASC),
   INDEX `fk_detalle_venta_idx` (`idventa` ASC),
