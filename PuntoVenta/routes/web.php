@@ -12,14 +12,19 @@
 */
 
 Route::get('/', function () {
-    return view('auth/login');
+    return view('welcome');
 });
 
 Route::resource('almacen/categoria','CategoriaController');
 Route::resource('almacen/articulo','ArticuloController');
 Route::resource('ventas/cliente','ClienteController');
 Route::resource('compras/proveedor','ProveedorController');
+<<<<<<< HEAD
 Route::resource('compras/ingreso','IngresoController');
+
 Auth::routes();
 
-Route::get('welcome', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
+=======
+Route::resource('compras/ingreso','IngresoController');
+>>>>>>> parent of 7f18480... Adelanto de sesiones
