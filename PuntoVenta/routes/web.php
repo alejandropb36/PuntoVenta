@@ -22,4 +22,4 @@ Route::resource('compras/proveedor','ProveedorController');
 Route::resource('compras/ingreso','IngresoController');
 Auth::routes();
 
-Route::get('/compras/ingreso', 'HomeController@index')->name('home');
+Route::get('welcome', 'HomeController@index')->name('home');
