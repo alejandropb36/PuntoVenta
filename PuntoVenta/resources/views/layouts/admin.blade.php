@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>PuntoVenta AP | www.github.com/Thehunter46</title>
+    <title>PuntoVenta AP</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -55,7 +55,7 @@
                   <li class="user-header">
                     
                     <p>
-                      Thehunter46
+                      Alejandro Ponce
                       <small>www.github.com/Thehunter46</small>
                     </p>
                   </li>
@@ -92,8 +92,8 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="almacen/articulo"><i class="fa fa-circle-o"></i> Artículos</a></li>
-                <li><a href="almacen/categoria"><i class="fa fa-circle-o"></i> Categorías</a></li>
+                <li><a href="{{url('almacen/articulo')}}"><i class="fa fa-circle-o"></i> Artículos</a></li>
+                <li><a href="{{url('almacen/categoria')}}"><i class="fa fa-circle-o"></i> Categorías</a></li>
               </ul>
             </li>
             
@@ -104,8 +104,8 @@
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Ingresos</a></li>
-                <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Proveedores</a></li>
+                <li><a href="{{url('compras/ingreso')}}"><i class="fa fa-circle-o"></i> Ingresos</a></li>
+                <li><a href="{{url('compras/proveedor')}}"><i class="fa fa-circle-o"></i> Proveedores</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -115,8 +115,8 @@
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="ventas/venta"><i class="fa fa-circle-o"></i> Ventas</a></li>
-                <li><a href="ventas/cliente"><i class="fa fa-circle-o"></i> Clientes</a></li>
+                <li><a href="{{url('ventas/venta')}}"><i class="fa fa-circle-o"></i> Ventas</a></li>
+                <li><a href="{{url('ventas/cliente')}}"><i class="fa fa-circle-o"></i> Clientes</a></li>
               </ul>
             </li>
                        
@@ -126,20 +126,20 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="configuracion/usuario"><i class="fa fa-circle-o"></i> Usuarios</a></li>
+                <li><a href="{{url('seguridad/usuario')}}"><i class="fa fa-circle-o"></i> Usuarios</a></li>
                 
               </ul>
             </li>
              <li>
-              <a href="#">
+              <a target="_blank" href="https://www.github.com/Thehunter46/PuntoVenta/wiki">
                 <i class="fa fa-plus-square"></i> <span>Ayuda</span>
-                <small class="label pull-right bg-red">PDF</small>
+                <small class="label pull-right bg-red">GitHub wiki</small>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a target="_blank" href="https://www.github.com/Thehunter46/PuntoVenta">
                 <i class="fa fa-info-circle"></i> <span>Acerca De...</span>
-                <small class="label pull-right bg-yellow">IT</small>
+                <small class="label pull-right bg-yellow">GitHub</small>
               </a>
             </li>
                         
@@ -193,9 +193,10 @@
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
           <b>Version</b> 2.3.0 
-          <a href="https://adminlte.io/themes/AdminLTE/index2.html#"> AdminLTE</a>
+          <a  target="_blank" href="https://adminlte.io/themes/AdminLTE/index2.html#"> AdminLTE</a>
+          
         </div>
-        <strong>Copyright &copy; 2018-2023 <a href="www.github.com/Thehunter46">Thehunter46</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2018 <a target="_blank" href="https://www.github.com/Thehunter46">Thehunter46</a>.</strong> All rights reserved.
       </footer>
 
       
