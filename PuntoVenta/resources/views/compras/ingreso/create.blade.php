@@ -103,7 +103,7 @@
 									<th></th>
 									<th></th>
 									<th></th>
-									<th><h4 id="total">S/. 0.00</h4></th>
+									<th><h4 id="total">$ 0.00</h4></th>
 								</tfoot>
 								<tbody>
 

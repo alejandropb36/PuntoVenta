@@ -40,7 +40,7 @@
 					<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 						<div class="form-group">
 							<label for="serie_comprobante">Serie Comprobante</label>
-							<input type="text" name="serie_comprobante" value="{{old('serie_comprobante')}}" class="form-control" placeholder="Serie Comprobante...">
+							<input type="text" name="serie_comprobante" value="SC" disabled class="form-control" placeholder="Serie Comprobante...">
 						</div>
 					</div>
 					<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
@@ -111,7 +111,7 @@
 									<th></th>
 									<th></th>
 									<th></th>
-									<th><h4 id="total">S/. 0.00</h4><input type="hidden" name="total_venta" id="total_venta"></th>
+									<th><h4 id="total">$ 0.00</h4><input type="hidden" name="total_venta" id="total_venta"></th>
 								</tfoot>
 								<tbody>
 
